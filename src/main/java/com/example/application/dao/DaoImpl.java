@@ -1,4 +1,4 @@
-package com.example.application;
+package com.example.application.dao;
 
 import com.example.framework.Component;
 

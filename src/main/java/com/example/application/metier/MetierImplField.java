@@ -1,5 +1,6 @@
-package com.example.application;
+package com.example.application.metier;
 
+import com.example.application.dao.IDao;
 import com.example.framework.Component;
 import com.example.framework.Inject;
 

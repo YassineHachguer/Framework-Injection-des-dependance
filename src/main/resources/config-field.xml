@@ -1,4 +1,4 @@
 <beans>
-    <bean id="dao" class="com.example.application.DaoImpl"/>
-    <bean id="metierField" class="com.example.application.MetierImplField"/>
+    <bean id="dao" class="com.example.application.dao.DaoImpl"/>
+    <bean id="metierField" class="com.example.application.metier.MetierImplField"/>
 </beans>

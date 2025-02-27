@@ -1,16 +1,17 @@
-package com.example.application;
+package com.example.application.metier;
 
+import com.example.application.dao.IDao;
 import com.example.framework.Component;
 import com.example.framework.Inject;
 
 @Component
-public class MetierImplConstructor implements IMetier {
+public class MetierImplSetter implements IMetier {
     private IDao dao;
 
     @Inject
-    public MetierImplConstructor(IDao dao) {
+    public void setDao(IDao dao) {
         this.dao = dao;
-        System.out.println("Injection via le Constructeur");
+        System.out.println("Injection via le Setter");
     }
 
     @Override

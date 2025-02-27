@@ -1,6 +1,6 @@
 <beans>
-    <bean id="dao" class="com.example.application.DaoImpl"/>
-    <bean id="metierConstructor" class="com.example.application.MetierImplConstructor">
+    <bean id="dao" class="com.example.application.dao.DaoImpl"/>
+    <bean id="metierConstructor" class="com.example.application.metier.MetierImplConstructor">
         <constructor-arg ref="dao"/>
     </bean>
 </beans>
