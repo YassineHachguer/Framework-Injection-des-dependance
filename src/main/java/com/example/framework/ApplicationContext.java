@@ -48,6 +48,16 @@ public class ApplicationContext {
         }
     }
 
+    private void injectDependencies(Object bean) throws IllegalAccessException {
+        Field[] fields = bean.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            if (field.isAnnotationPresent(Inject.class)) {
+                field.setAccessible(true);
+                field.set(bean, beans.get(field.getName()));
+            }
+        }
+
+    }
 
 
 }
