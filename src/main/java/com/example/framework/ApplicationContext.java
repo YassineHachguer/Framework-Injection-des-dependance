@@ -71,4 +71,7 @@ public class ApplicationContext {
         }
     }
 
+    public Object getBean(String id) {
+        return beans.get(id);
+    }
 }
