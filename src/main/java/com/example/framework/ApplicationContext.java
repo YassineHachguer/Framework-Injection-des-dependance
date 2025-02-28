@@ -57,7 +57,18 @@ public class ApplicationContext {
             }
         }
 
+        Method[] methods = bean.getClass().getDeclaredMethods();
+        for (Method method : methods) {
+            if (method.isAnnotationPresent(Inject.class) && method.getName().startsWith("set")) {
+                String fieldName = method.getName().substring(3, 4).toLowerCase() + method.getName().substring(4);
+                method.setAccessible(true);
+                try {
+                    method.invoke(bean, beans.get(fieldName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
-
 
 }
